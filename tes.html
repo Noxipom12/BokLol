@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoTutorial</title>
+    <style>
+        *,
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .video-wrapper {
+            width: 23%; /* Mengatur lebar 23% agar ada ruang antara video */
+            position: relative;
+            margin-bottom: 20px;
+            text-align: center; /* Menengahkan judul */
+            overflow: hidden; /* Menghindari judul keluar dari area video */
+        }
+        video {
+            display: block;
+            width: 100%; /* Atur lebar video menjadi 100% */
+            max-height: 150px; /* Atur tinggi maksimum video */
+            border: 2px solid crimson;
+        }
+        .video-title {
+            font-family: 'Roboto', sans-serif; /* Mengatur jenis huruf atau font */
+            font-size: 16px; /* Ukuran huruf */
+            color: #333; /* Warna huruf */
+            position: absolute; /* Mengatur posisi absolut */
+            top: 5px; /* Menentukan jarak dari atas */
+            left: 0;
+            right: 0;
+            text-align: center; /* Menengahkan judul */
+            width: 100%; /* Lebar judul 100% */
+            overflow: hidden; /* Menghindari judul keluar dari area video */
+        }
+        .video-component {
+            position: absolute;
+            bottom: 0px; /* Menggeser sedikit ke atas */
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1; /* Agar tombol-tombol tampil di atas video */
+        }
+        .btn {
+            border: none;
+            padding: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 12px; /* Mengurangi ukuran tombol */
+            border-radius: 8px;
+            background-color: transparent; /* Setel latar belakang menjadi transparan */
+            color: red; /* Atur warna teks menjadi merah */
+        }
+        .btn-play:hover,
+        .btn-pause:hover,
+        .btn-minimize:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Tambahkan efek hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Video pertama -->
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849980.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 1</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+        <!-- Video tambahan -->
+        <!-- Tambahkan video tambahan sesuai kebutuhan -->
+        <!-- Contoh 50 video tambahan -->
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849857.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 3</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849849.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Jilbab di mobil</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321850028.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321850034.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321850041.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321850042.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+            </video>
+            <div class="video-title">Video 2</div> <!-- Judul video -->
+            <div class="video-component">
+                <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+        <!-- Tambahkan video tambahan lainnya di sini -->
+    </div>
+</body>
+<script>
+    function play(btn) {
+        const video = btn.parentNode.parentNode.querySelector('video');
+        const allVideos = document.querySelectorAll('video');
+        console.log("playing");
+        allVideos.forEach(vid => {
+            if (vid !== video) {
+                vid.pause(); // Jeda semua video selain yang sedang dimainkan
+            }
+        });
+        video.play(); // Memainkan video yang dipilih
+    }
+
+    function pause(btn) {
+        const video = btn.parentNode.parentNode.querySelector('video');
+        console.log("pause");
+        video.pause();
+    }
+
+    function minimize(btn) {
+        const video = btn.parentNode.parentNode.querySelector('video');
+        console.log("minimize");
+        video.requestPictureInPicture();
+    }
+</script>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BacolLol</title>
+    <style>
+        *,
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #ddd;
+        }
+        header {
+            background-color: #222;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: #fff;
+        }
+        .search-container button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #444;
+            color: #fff;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        .search-container button:hover {
+            background-color: #555;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(500px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .video-wrapper {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 8px;
+            position: relative;
+        }
+        video {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 8px;
+        }
+        .video-title {
+            font-size: 18px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .video-component {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        .btn {
+            background-color: #444;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <h1 style="margin-right: 10px;">BacolLol</h1>
+        <img style="width: 50px;" height="40px" src="https://f.top4top.io/p_3062c3tf31.png" alt="Gambar Kecil">
+    </div>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jilbab.html">Jilbab</a></li>
+                    <li><a href="bocil.html">Bocil</a></li>
+                    <li><a href="barat.html">Barat</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search...">
+                <button onclick="searchVideos()">Search</button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="video-grid" id="video-grid">
+            <div class="video-wrapper" data-title="Jilbab">
+                <video controls>
+                    <source src="./assets/JILBAB/document_6215284570321849849.mp4" type="video/mp4"/>
+                </video>
+                <div class="video-title">Jilbab Tutorial</div>
+                <div class="video-component">
+                    <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                    <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                    <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+                    <a href="./assets/JILBAB/document_6215284570321849849.mp4" download class="btn">DOWNLOAD</a>
+                </div>
+            </div>
+            <div class="video-wrapper" data-title="Bocil">
+                <video controls>
+                    <source src="./assets/JILBAB/document_6215284570321849857.mp4" type="video/mp4"/>
+                </video>
+                <div class="video-title">Bocil Fun Time</div>
+                <div class="video-component">
+                    <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                    <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                    <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+                    <a href="./assets/JILBAB/document_6215284570321849857.mp4" download class="btn">DOWNLOAD</a>
+                </div>
+            </div>
+            <div class="video-wrapper" data-title="Jilbab">
+                <video controls>
+                    <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+                </video>
+                <div class="video-title">Western Movies</div>
+                <div class="video-component">
+                    <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                    <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                    <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+                    <a href="./assets/JILBAB/document_6215284570321849858.mp4" download class="btn">DOWNLOAD</a>
+                </div>
+            </div>
+            <div class="video-wrapper" data-title="Adik Jilbab">
+                <video controls>
+                    <source src="./assets/JILBAB/document_6215284570321849858.mp4" type="video/mp4"/>
+                </video>
+                <div class="video-title">Adik Jilbab</div>
+                <div class="video-component">
+                    <button onclick="play(this)" class="btn btn-play">PLAY</button>
+                    <button onclick="pause(this)" class="btn btn-pause">PAUSE</button>
+                    <button onclick="minimize(this)" class="btn btn-minimize">MINIMIZE</button>
+                    <a href="./assets/JILBAB/document_6215284570321849858.mp4" download class="btn">DOWNLOAD</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Fungsi untuk play, pause, dan minimize
+        function play(btn) {
+            const video = btn.parentNode.parentNode.querySelector('video');
+            const allVideos = document.querySelectorAll('video');
+            allVideos.forEach(vid => {
+                if (vid !== video) {
+                    vid.pause();
+                }
+            });
+            video.play();
+        }
+
+        function pause(btn) {
+            const video = btn.parentNode.parentNode.querySelector('video');
+            video.pause();
+        }
+
+        function minimize(btn) {
+            const video = btn.parentNode.parentNode.querySelector('video');
+            video.requestPictureInPicture();
+        }
+
+        // Fungsi untuk mencari video
+        function searchVideos() {
+            const input = document.getElementById('search-input').value.toLowerCase();
+            const videos = document.querySelectorAll('.video-wrapper');
+            
+            let found = false;
+            videos.forEach(video => {
+                const title = video.getAttribute('data-title').toLowerCase();
+                if (title.includes(input)) {
+                    video.style.display = '';
+                    found = true;
+                } else {
+                    video.style.display = 'none';
+                }
+            });
+
+            if (!found) {
+                alert("No videos found matching your search criteria.");
+            }
+        }
+
+        // Fungsi loadVideos (placeholder)
+        function loadVideos() {
+            // Placeholder: Function to be implemented if needed
+        }
+
+        // Panggil fungsi loadVideos saat halaman dimuat
+        window.onload = loadVideos;
+    </script>
+</body>
+</html>
